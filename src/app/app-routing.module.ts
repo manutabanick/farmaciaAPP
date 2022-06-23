@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'perfil', component: PerfilComponent },
   { path: '', component: HomeComponent},
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
+ 
 ];
 
 @NgModule({

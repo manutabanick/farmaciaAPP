@@ -44,9 +44,9 @@
   
   
     <div style="text-align: end; margin: 10px;">
-      <ion-button  *ngIf="!ingresarEnable" (click)="registrarse()"  class="normal" color="dark">Registrarse</ion-button>
-      <ion-button  *ngIf="!ingresarEnable" (click)="ingresarEnable = true"  class="normal" color="dark">Ingresar</ion-button>
-      <ion-button  *ngIf="ingresarEnable" (click)="ingresar()"  class="normal" color="dark">Ingresar</ion-button>
+      <ion-button  *ngIf="!ingresarEnable" (click)="registrarse()"    (click)="presentAlertError()" class="normal" color="dark">Registrarse</ion-button>
+      <ion-button  *ngIf="!ingresarEnable" (click)="ingresarEnable = true"        (click)="presentAlerError()"         class="normal" color="dark">Ingresar</ion-button>
+      <ion-button  *ngIf="ingresarEnable" (click)="ingresar()"        (click)="presentError()"              class="normal" color="dark">Ingresar</ion-button>
       <ion-button  *ngIf="ingresarEnable" (click)="ingresarEnable = false"  class="normal" color="dark">Registrase</ion-button>
     </div>
 

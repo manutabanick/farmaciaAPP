@@ -5,6 +5,7 @@ import { FirebaseauthService } from '../../services/firebaseauth.service';
 import { FirestoreService } from '../../services/firestore.service';
 import { FirestorageService } from '../../services/firestorage.service';
 import { Subscription } from 'rxjs';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-perfil',
@@ -32,7 +33,8 @@ export class PerfilComponent implements OnInit {
               public firebaseauthService: FirebaseauthService,
               public firestoreService: FirestoreService,
               public firestorageService: FirestorageService,
-              private modalController: ModalController) {
+              private modalController: ModalController,
+              public alertController: AlertController) {
 
         this.firebaseauthService.stateAuth().subscribe( res => {
                 console.log(res);
@@ -129,13 +131,26 @@ export class PerfilComponent implements OnInit {
    }
 
 
-   
-  }
-
 
   
 
 
 
 
+
+     async presentError() {
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'Error',
+        message: 'usuario no existente .',
+        buttons: ['Ok']
+
+        });
+        this.firebaseauthService.registrar(this.cliente.email ='', this.cliente.celular ='');{
+      
+        await alert.present();
+      }
+   
+  }
+}
 

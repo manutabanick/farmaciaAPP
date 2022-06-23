@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { FirestoreService } from '../../services/firestore.service';
 import { Producto } from '../../models';
+import { HomeService } from 'src/app/home.service';
+
+
 
 
 @Component({
@@ -16,12 +19,17 @@ export class HomeComponent implements OnInit {
   productos: Producto[] = [];
 
   constructor(public menucontroler: MenuController,
-              public firestoreService: FirestoreService) {
+              public firestoreService: FirestoreService,
+              public homeService:HomeService) {
 
                 this.loadProductos();
   }
 
   ngOnInit() {}
+  
+  buscar(event){
+    console.log(event);
+  }
 
   openMenu() {
     console.log('open menu');
@@ -34,4 +42,6 @@ export class HomeComponent implements OnInit {
             this.productos = res;
       });
   }
+ 
+  
 }

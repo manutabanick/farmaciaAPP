@@ -6,6 +6,7 @@ import { CarritoService } from '../../services/carrito.service';
 import { Subscription } from 'rxjs';
 import { FirebaseauthService } from '../../services/firebaseauth.service';
 import { retry } from 'rxjs/operators';
+import { ToastController } from '@ionic/angular';
 
 
 
@@ -27,7 +28,8 @@ export class CarritoComponent implements OnInit, OnDestroy {
   constructor(public menucontroler: MenuController,
               public firestoreService: FirestoreService,
               public carritoService: CarritoService,
-              public firebaseauthService: FirebaseauthService) {
+              public firebaseauthService: FirebaseauthService,
+              public toastController: ToastController) {
 
             this.initCarrito();
             this.loadPedido();
@@ -104,4 +106,20 @@ export class CarritoComponent implements OnInit, OnDestroy {
   }
 
 
-}
+
+
+
+
+
+  async presentToast1(){
+    const toast= await this.toastController.create({
+      message: 'Su pedido a sido realizado con exito',
+      duration: 2000,
+      position: "bottom"
+  
+    });
+
+  toast.present()
+    
+     }
+    }

@@ -1,9 +1,11 @@
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-title class="subtitulo ion-text-wrap">
-        Bienvenidos a FarmaciaApp
+        Bienvenidos a FarmaApp
     </ion-title>
-    
+    <ion-content>
+     
+      </ion-content>
     <ion-buttons slot="start">
       <ion-button (click)="openMenu()">
          <ion-icon color="secondary" slot="icon-only"  name="menu-sharp"></ion-icon>
@@ -12,14 +14,15 @@
 
     <ion-buttons slot="end">
       <ion-button [routerLink]="['/carrito']" >
-        <ion-icon color="medium" slot="icon-only"  name="cart-sharp"></ion-icon>
+        <ion-icon color="dark" slot="icon-only"  name="cart-sharp"></ion-icon>
      </ion-button>
       <ion-button [routerLink]="['/perfil']" >
-         <ion-icon color="medium" slot="icon-only"  name="person-circle"></ion-icon>
+         <ion-icon color="dark" slot="icon-only"  name="person-circle"></ion-icon>
       </ion-button>
     </ion-buttons>
 
   </ion-toolbar>
+  
 </ion-header>
 
 <ion-content>
