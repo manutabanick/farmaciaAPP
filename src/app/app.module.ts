@@ -12,6 +12,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
+import { HttpClientModule } from '@angular/common/http';
+
 //import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
 @NgModule({
@@ -26,6 +28,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     AngularFirestoreModule.enablePersistence(),
     AngularFireStorageModule,
     AngularFireAuthModule,
+    
+    HttpClientModule,
     
     
   ],

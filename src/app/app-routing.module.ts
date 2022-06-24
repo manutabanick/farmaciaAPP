@@ -23,7 +23,8 @@ const routes: Routes = [
   { path: 'carrito', component: CarritoComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: '', component: HomeComponent},
-  { path: '**', redirectTo: 'home', pathMatch: 'full' },
+  
+ 
  
 ];
 

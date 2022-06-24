@@ -1,11 +1,9 @@
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-title class="subtitulo ion-text-wrap">
-        Bienvenidos a FarmaApp
+        Bienvenidos a FarmaciaApp
     </ion-title>
-    <ion-content>
-     
-      </ion-content>
+
     <ion-buttons slot="start">
       <ion-button (click)="openMenu()">
          <ion-icon color="secondary" slot="icon-only"  name="menu-sharp"></ion-icon>
@@ -14,20 +12,44 @@
 
     <ion-buttons slot="end">
       <ion-button [routerLink]="['/carrito']" >
-        <ion-icon color="dark" slot="icon-only"  name="cart-sharp"></ion-icon>
+        <ion-icon color="medium" slot="icon-only"  name="cart-sharp"></ion-icon>
      </ion-button>
       <ion-button [routerLink]="['/perfil']" >
-         <ion-icon color="dark" slot="icon-only"  name="person-circle"></ion-icon>
+         <ion-icon color="medium" slot="icon-only"  name="person-circle"></ion-icon>
       </ion-button>
     </ion-buttons>
 
   </ion-toolbar>
-  
+
 </ion-header>
+<ion-label>
+  <ion-searchbar placeholder="buscar" animated (ionchange)="SearchProductos($event)"></ion-searchbar>
+</ion-label>
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <h1>
+        <img src="assets\ofertaniveaaa.jpeg"/>
+      </h1>
+    </ion-slide>
+    <ion-slide>
+      <h1> 
+        <img src="assets\oferta8.png"/>
+      </h1>
+    </ion-slide>
+    <ion-slide>
+      <h1>
+        <img src="assets\proteinaaaofertaaa.jpeg"/>
+      </h1>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+
 
 <ion-content>
  <div *ngFor="let producto of productos">
-  <app-producto [producto]= producto></app-producto>
+  <app-producto [producto]= producto (click)="presentToast1()"></app-producto>
   </div>
 
 </ion-content>
